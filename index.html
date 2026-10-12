@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tailwind css - Page3</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="font-['Nunito_Sans',sans-serif] bg-white">
+
+    <!-- HEADER: column on mobile/tablet, row on large screens -->
+    <header class="flex w-full flex-col border-b border-gray-200 bg-white lg:flex-row lg:items-center">
+
+        <!-- 1. LOGO PANEL (blue, slanted right edge on large screens) -->
+        <div class="flex items-center justify-center bg-[#2F7BFF] py-5
+                lg:w-[34%] lg:justify-end lg:py-6 lg:pr-24
+                lg:[clip-path:polygon(0_0,91%_0,100%_100%,0_100%)]">
+            <a href="#" class="flex items-center gap-2 text-white">
+                <!-- Gear icon -->
+                <svg viewBox="0 0 40 40" class="h-9 w-9" fill="none" aria-hidden="true">
+                    <circle cx="20" cy="20" r="15" stroke="white" stroke-width="5" stroke-dasharray="4.7 4.7" />
+                    <circle cx="20" cy="20" r="12" fill="white" />
+                    <circle cx="20" cy="20" r="7" fill="#2F7BFF" />
+                    <circle cx="20" cy="20" r="3" fill="white" />
+                </svg>
+                <span class="text-3xl font-extrabold tracking-wide">MECHANIC</span>
+            </a>
+        </div>
+
+        <!--  NAVIGATION -->
+        <nav class="flex flex-1 flex-wrap items-center justify-center gap-x-8 gap-y-3 px-4 py-4">
+            <a href="#" class="border-b-2 border-[#3B6FD9] pb-0.5 text-sm font-semibold text-[#3B6FD9]">Home</a>
+            <a href="#about" class="text-sm font-semibold text-[#1F2937] hover:text-[#2F7BFF]">Company</a>
+            <a href="#sector" class="text-sm font-semibold text-[#1F2937] hover:text-[#2F7BFF]">Sector</a>
+            <a href="#product" class="text-sm font-semibold text-[#1F2937] hover:text-[#2F7BFF]">Product</a>
+            <a href="#blog" class="text-sm font-semibold text-[#1F2937] hover:text-[#2F7BFF]">Blog</a>
+            <a href="#" class="text-sm font-semibold text-[#1F2937] hover:text-[#2F7BFF]">Career</a>
+            <a href="#" class="text-sm font-semibold text-[#1F2937] hover:text-[#2F7BFF]">Contact Us</a>
+        </nav>
+
+        <!-- BUTTON -->
+        <div class="flex justify-center px-4 pb-5 lg:justify-end lg:px-0 lg:pb-0 lg:pr-24">
+            <a href="#" class="flex items-center gap-2 rounded-full bg-[#0F4FFF] px-6 py-3 text-sm font-semibold text-white
+                         hover:bg-[#0B3FD0]">
+                Get a Quote
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- hero section  -->
+    <section class="relative flex min-h-screen flex-col overflow-hidden bg-white lg:flex-row">
+
+        <!-- LEFT PART: faded building photo + text -->
+        <div class="relative flex flex-1 items-center bg-sky-100 bg-[url('hero_section_bg.png')] bg-cover bg-center
+                px-6 py-16 md:px-12 lg:py-0 lg:pl-32">
+
+            <!-- White layer on top of the photo to make it look faded -->
+            <div class="absolute inset-0 bg-white/60"></div>
+
+            <!-- Text content (relative z-10 keeps it above the white layer) -->
+            <div class="relative z-10 flex max-w-xl flex-col items-start gap-6">
+
+                <h1 class="font-['Lato',sans-serif] text-4xl leading-tight text-gray-900 md:text-5xl xl:text-6xl">
+                    <span class="font-light">Good People,</span>
+                    <span class="font-black">Great Engineering</span>
+                </h1>
+
+                <p class="max-w-md text-sm leading-relaxed text-gray-800">
+                    We would like to introduce ourself as a manufacturer &amp; exporter of feed
+                    plant, Feed machineries &amp; accomplishing turnkey projects &amp; spares
+                    production for countrywide Cattle.
+                </p>
+
+                <a href="#" class="flex items-center gap-2 rounded-full bg-[#0F4FFF] px-6 py-3 text-sm font-semibold text-white
+                           hover:bg-[#0B3FD0]">
+                    Read More
+                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- RIGHT PART: blue panel + oval image -->
+        <div class="flex items-center justify-center bg-[#2F6FFF] px-6 pb-32 pt-12
+                lg:w-[37%] lg:justify-start lg:px-0 lg:py-0">
+
+            <!-- Oval image. lg:-ml-32 pulls it left so it overlaps the photo side -->
+            <div class="relative z-10 h-80 w-64 overflow-hidden rounded-[50%] bg-sky-200
+                  lg:-ml-32 lg:h-[30rem] lg:w-80 xl:h-[34rem] xl:w-[25rem]">
+                <img src="hero_section_bg.png" alt="Factory building" class="h-full w-full object-cover" />
+            </div>
+
+        </div>
+
+        <!-- White curve at the bottom: a big white oval, mostly hidden below the section -->
+        <div class="absolute -bottom-56 left-1/2 h-96 w-[150%] -translate-x-1/2 rounded-[50%] bg-white"></div>
+
+    </section>
+
+    <!-- about us section -->
+    <section class="flex flex-col items-center justify-center gap-10 px-6 py-16 lg:flex-row lg:gap-16" id="about">
+
+        <!-- LEFT: 2 x 2 image collage -->
+        <div class="relative flex w-full max-w-sm flex-col gap-3 lg:max-w-md">
+
+            <!-- Row 1 -->
+            <div class="flex gap-3">
+                <img src="about_img1.png" alt="Warehouse shelves"
+                    class="aspect-square min-w-0 flex-1 rounded-3xl bg-slate-300 object-cover" />
+                <img src="hero_section_bg.png" alt="Factory hall"
+                    class="aspect-square min-w-0 flex-1 rounded-3xl bg-slate-300 object-cover" />
+            </div>
+
+            <!-- Row 2 -->
+            <div class="flex gap-3">
+                <img src="https://kaizen.com/wp-content/uploads/2024/05/capa-22-scaled.webp" alt="Feed machine"
+                    class="aspect-square min-w-0 flex-1 rounded-3xl bg-slate-300 object-cover" />
+                <img src="https://img.magnific.com/free-photo/factory-workshop-interior-machines-glass-production-background_645730-396.jpg?semt=ais_hybrid&w=740&q=80"
+                    alt="Industrial units" class="aspect-square min-w-0 flex-1 rounded-3xl bg-slate-300 object-cover" />
+            </div>
+
+            <!-- White diamond in the centre with the gear logo -->
+            <div class="absolute left-1/2 top-1/2 flex aspect-square w-[22%] -translate-x-1/2 -translate-y-1/2
+                  rotate-45 items-center justify-center rounded-2xl bg-white">
+                <svg viewBox="0 0 40 40" class="aspect-square w-3/5 -rotate-45" fill="none" aria-hidden="true">
+                    <circle cx="20" cy="20" r="15" stroke="#2F6FFF" stroke-width="5" stroke-dasharray="4.7 4.7" />
+                    <circle cx="20" cy="20" r="12" fill="#2F6FFF" />
+                    <circle cx="20" cy="20" r="7" fill="white" />
+                    <circle cx="20" cy="20" r="3" fill="#2F6FFF" />
+                </svg>
+            </div>
+
+        </div>
+
+        <!-- RIGHT: text -->
+        <div class="flex w-full max-w-xl flex-col items-start gap-5">
+
+            <h2 class="font-['Lato',sans-serif] text-4xl font-black text-gray-900">About Us</h2>
+
+            <p class="text-sm leading-7 text-gray-900">
+                We would like to introduce ourself as a manufacturer &amp; exportere of
+                feed plant, Feed Machineries &amp; accomplishing Turnkey projects &amp;
+                spares production for country wide cattle. Poultry and Aqya feed
+                plants as well as in abroad too. The company is established in 1998
+                and since then, it has been serving to Feed Plants and other
+                engineering and fabricated industries with commitment and perfection.
+                We manufacture and market our product under the brand name of
+                "<strong class="font-extrabold">MACHANIC</strong>".
+            </p>
+
+            <a href="#" class="flex items-center gap-2 rounded-full bg-[#0F4FFF] px-5 py-2.5 text-xs font-semibold text-white
+                         hover:bg-[#0B3FD0]">
+                Read More
+                <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- sector section -->
+    <section class="flex flex-col items-center gap-10 bg-[#EEF3FF] px-6 py-16" id="sector">
+
+        <!-- Heading -->
+        <h2 class="font-['Lato',sans-serif] text-4xl text-gray-900 md:text-5xl">
+            <span class="font-light">Our</span>
+            <span class="font-black font-semibold">Sector</span>
+        </h2>
+
+        <!-- Cards: stacked on mobile (flex-col), in one row from tablet up (md:flex-row) -->
+        <div class="flex w-full max-w-3xl flex-col items-center gap-4 md:flex-row">
+
+            <!-- CARD 1 -->
+            <a href="#" class="group relative aspect-[5/6] w-full max-w-xs overflow-hidden rounded-3xl bg-slate-300
+                         md:min-w-0 md:max-w-none md:flex-1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSyhxu-a88iYsROXZ6lREc5bqPhltWnf8G9UkW2GELQw&s=10"
+                    alt="Animal Feed" class="h-full w-full object-cover" />
+
+                <!-- Hover layer: hidden at first, fades in on hover -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white/70
+                    opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <span class="text-base font-semibold text-gray-900">Animal Feed</span>
+                    <span
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-900 text-gray-900">
+                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7 17L17 7M8 7h9v9" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- CARD 2 -->
+            <a href="#" class="group relative aspect-[5/6] w-full max-w-xs overflow-hidden rounded-3xl bg-slate-300
+                         md:min-w-0 md:max-w-none md:flex-1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxiX_EVYWJ5jnmTFk-bvOpDGL18q4w7W_8YOm59AbD6g&s=10"
+                    alt="Feed Plants" class="h-full w-full object-cover" />
+
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white/70
+                    opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <span class="text-base font-semibold text-gray-900">Feed Plants</span>
+                    <span
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-900 text-gray-900">
+                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7 17L17 7M8 7h9v9" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- CARD 3 -->
+            <a href="#" class="group relative aspect-[5/6] w-full max-w-xs overflow-hidden rounded-3xl bg-slate-300
+                         md:min-w-0 md:max-w-none md:flex-1">
+                <img src="https://www.gsma.com/solutions-and-impact/industries/connected-manufacturing/wp-content/uploads/2024/12/616x450_manu_13_header.jpg"
+                    alt="Engineering" class="h-full w-full object-cover" />
+
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white/70
+                    opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <span class="text-base font-semibold text-gray-900">Engineering</span>
+                    <span
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-900 text-gray-900">
+                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7 17L17 7M8 7h9v9" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- products section -->
+
+    <section class="relative flex flex-col items-center gap-10 bg-slate-800 bg-[url('https://group.teamlease.com/wp-content/uploads/2023/11/Blog-banner-2.png')]
+                  bg-cover bg-center px-6 py-16 md:py-20" id="product">
+
+        <!-- Dark layer on top of the background photo -->
+        <div class="absolute inset-0 bg-slate-900/70"></div>
+
+        <!-- Heading (relative z-10 keeps it above the dark layer) -->
+        <h2 class="relative z-10 font-['Lato',sans-serif] text-4xl text-white md:text-5xl">
+            <span class="font-light">Our</span>
+            <span class="font-black font-semibold">Products</span>
+        </h2>
+
+        <!-- Cards: 2 per row on mobile, 4 in one row from tablet up -->
+        <div class="relative z-10 flex w-full max-w-3xl flex-wrap">
+
+            <!-- CARD 1 -->
+            <a href="#" class="group relative aspect-[7/10] w-1/2 overflow-hidden bg-slate-300 md:w-1/4">
+                <img src="https://thumbs.dreamstime.com/b/food-products-boxs-transfer-automated-industrial-conveyor-systems-automation-package-151141892.jpg"
+                    alt="Pallet Mills" class="h-full w-full object-cover" />
+
+                <!-- Hover layer -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white/80
+                    opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <span class="text-sm font-semibold text-gray-900 md:text-base">Pallet Mills</span>
+                    <span
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-900 text-gray-900">
+                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7 17L17 7M8 7h9v9" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- CARD 2 -->
+            <a href="#" class="group relative aspect-[7/10] w-1/2 overflow-hidden bg-slate-400 md:w-1/4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnRdvMD9Xw_izgHKPIZRX8F6FUgBaY_lPrAka1a5HGGxK3wt2IfDCO7So4&s=10"
+                    alt="Cooling Units" class="h-full w-full object-cover" />
+
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white/80
+                    opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <span class="text-sm font-semibold text-gray-900 md:text-base">Cooling Units</span>
+                    <span
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-900 text-gray-900">
+                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7 17L17 7M8 7h9v9" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- CARD 3 -->
+            <a href="#" class="group relative aspect-[7/10] w-1/2 overflow-hidden bg-slate-300 md:w-1/4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqTNRRiMc9lgfV9G1B4WGSc-LOPmavSWhCqbGxKJPf1AXp3ZvbtFplmJI&s=10"
+                    alt="Feed Mixers" class="h-full w-full object-cover" />
+
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white/80
+                    opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <span class="text-sm font-semibold text-gray-900 md:text-base">Feed Mixers</span>
+                    <span
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-900 text-gray-900">
+                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7 17L17 7M8 7h9v9" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- CARD 4 -->
+            <a href="#" class="group relative aspect-[7/10] w-1/2 overflow-hidden bg-slate-400 md:w-1/4">
+                <img src="https://marktlink.bucketcdn.com/cdn-cgi/image/width=458,height=545,quality=95,format=webp,fit=cover/Sectors/Industrie.jpg"
+                    alt="Conveyors" class="h-full w-full object-cover" />
+
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white/80
+                    opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <span class="text-sm font-semibold text-gray-900 md:text-base">Conveyors</span>
+                    <span
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-900 text-gray-900">
+                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7 17L17 7M8 7h9v9" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- dashboard counts -->
+
+    <section class="flex flex-col items-center gap-8 px-6 py-16
+                  sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-12 lg:gap-x-16">
+
+        <!-- ITEM 1: Projects -->
+        <div class="flex w-full max-w-[16rem] items-center gap-4 sm:w-auto sm:max-w-none">
+            <!-- Blue icon box -->
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-[#0F4FFF] lg:h-16 lg:w-16">
+                <!-- Rocket icon -->
+                <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="white" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path
+                        d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                    <path
+                        d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+                </svg>
+            </div>
+            <!-- Number + label -->
+            <div class="flex flex-col">
+                <span class="text-2xl font-extrabold text-gray-900">272+</span>
+                <span class="text-[11px] uppercase tracking-wide text-gray-800">Projects</span>
+            </div>
+        </div>
+
+        <!-- ITEM 2: Years of experience -->
+        <div class="flex w-full max-w-[16rem] items-center gap-4 sm:w-auto sm:max-w-none">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-[#0F4FFF] lg:h-16 lg:w-16">
+                <!-- Sparkles icon -->
+                <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="white" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path
+                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                    <path d="M5 3v4" />
+                    <path d="M19 17v4" />
+                    <path d="M3 5h4" />
+                    <path d="M17 19h4" />
+                </svg>
+            </div>
+            <div class="flex max-w-[9rem] flex-col">
+                <span class="text-2xl font-extrabold text-gray-900">22</span>
+                <span class="text-[11px] uppercase tracking-wide text-gray-800">Years of combined experience</span>
+            </div>
+        </div>
+
+        <!-- ITEM 3: Qualified staff -->
+        <div class="flex w-full max-w-[16rem] items-center gap-4 sm:w-auto sm:max-w-none">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-[#0F4FFF] lg:h-16 lg:w-16">
+                <!-- Users icon -->
+                <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="white" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-2xl font-extrabold text-gray-900">40</span>
+                <span class="text-[11px] uppercase tracking-wide text-gray-800">Qualified staff</span>
+            </div>
+        </div>
+
+        <!-- ITEM 4: Fleet and equipment -->
+        <div class="flex w-full max-w-[16rem] items-center gap-4 sm:w-auto sm:max-w-none">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-[#0F4FFF] lg:h-16 lg:w-16">
+                <!-- Two gears icon -->
+                <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" aria-hidden="true">
+                    <circle cx="9" cy="15" r="6" stroke="white" stroke-width="3" stroke-dasharray="2.36 2.36" />
+                    <circle cx="9" cy="15" r="5" fill="white" />
+                    <circle cx="9" cy="15" r="2" fill="#0F4FFF" />
+                    <circle cx="18" cy="7" r="3.5" stroke="white" stroke-width="2" stroke-dasharray="1.37 1.37" />
+                    <circle cx="18" cy="7" r="2.8" fill="white" />
+                    <circle cx="18" cy="7" r="1" fill="#0F4FFF" />
+                </svg>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-2xl font-extrabold text-gray-900">60</span>
+                <span class="text-[11px] uppercase tracking-wide text-gray-800">Fleet &amp; equipment</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- message section -->
+    <section class="relative flex items-center justify-center bg-slate-200 bg-[url('https://www.ibm.com/content/adobe-cms/us/en/think/topics/industry-4-0/jcr:content/root/leadspace_container/leadspace_article_fu/image.coreimg.png/1789569087936/4340452-v1-1.png')]
+                  bg-cover bg-center px-6 py-20 md:py-28" id="blog">
+
+        <!-- White layer on top of the photo to make it look faded -->
+        <div class="absolute inset-0 bg-white/75"></div>
+
+        <!-- Content: stacked in a column and centred -->
+        <div class="relative z-10 flex max-w-2xl flex-col items-center gap-6 text-center">
+
+            <h2 class="font-['Lato',sans-serif] text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
+                We Are Providin 24/7 <br> Technical Support
+            </h2>
+
+            <p class="text-sm leading-8 text-gray-900">
+                We would like to introduce ourself as a manufacturer &amp; exporter of feed
+                plant, Feed machineries &amp; accomplishing turnkey projects &amp; spares
+                production for countrywide Cattle.
+            </p>
+
+            <a href="#" class="flex items-center gap-2 rounded-full bg-[#0F4FFF] px-6 py-3 text-xs font-semibold text-white
+                         hover:bg-[#0B3FD0]">
+                Call Now
+                <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- video section -->
+    <section class="flex flex-col items-center gap-10 px-6 py-16">
+
+        <!-- Heading -->
+        <h2 class="font-['Lato',sans-serif] text-4xl text-gray-900 md:text-5xl">
+            <span class="font-light">Our</span>
+            <span class="font-black font-semibold">Videos</span>
+        </h2>
+
+        <!-- Cards: stacked on mobile (flex-col), one row from tablet up (md:flex-row) -->
+        <div class="flex w-full max-w-6xl flex-col items-center gap-4 md:flex-row md:justify-center">
+
+            <a href="https://www.youtube.com/watch?v=V4lSrEizT1g&xstg=CAMSEBUJ_b-oH-PhF0yjBgb_zzE%3D" target="_blank"
+                rel="noopener noreferrer" aria-label="Watch video 1 on YouTube" class="group relative flex aspect-video w-full max-w-md items-center justify-center overflow-hidden bg-slate-300
+                md:aspect-[4/3] md:w-1/4 md:min-w-0 md:max-w-none">
+                <!-- Thumbnail -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR34rcBms6hWM1ti7H1zeIvljvScWmSDNBI-CZ79LprMA8mDylMghQf4Ys6&s=10"
+                    alt="" class="absolute inset-0 h-full w-full object-cover
+                                                    transition-transform duration-300 group-hover:scale-105" />
+                <!-- White layer: faded on desktop, disappears on hover -->
+                <span class="absolute inset-0 bg-white/0 transition-colors duration-300
+                     md:bg-white/60 md:group-hover:bg-white/0"></span>
+                <!-- Red YouTube play button -->
+                <span class="relative flex h-11 w-16 items-center justify-center rounded-xl bg-[#FF0000]
+                     transition-transform duration-300 group-hover:scale-110">
+                    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="white" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- VIDEO 2 (centre, biggest) -->
+            <a href="https://www.youtube.com/watch?v=tN-wm6LXmXY&xstg=CAMSEBUJ_b-oH-PhF0yjBgb_zzE%3D" target="_blank"
+                rel="noopener noreferrer" aria-label="Watch video 2 on YouTube" class="group relative flex aspect-video w-full max-w-md items-center justify-center overflow-hidden bg-slate-300
+                md:w-1/2 md:min-w-0 md:max-w-none">
+                <img src="https://images.moneycontrol.com/static-mcnews/2025/07/20250706081817_electronics-manufacturing-mobile.jpg?impolicy=website&width=1280&height=720"
+                    alt="" class="absolute inset-0 h-full w-full object-cover
+                                                    transition-transform duration-300 group-hover:scale-105" />
+                <span class="relative flex h-11 w-16 items-center justify-center rounded-xl bg-[#FF0000]
+                     transition-transform duration-300 group-hover:scale-110">
+                    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="white" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- VIDEO 3 (right, smaller and faded on large screens) -->
+            <a href="https://www.youtube.com/watch?v=V4lSrEizT1g&xstg=CAMSEBUJ_b-oH-PhF0yjBgb_zzE%3D" target="_blank"
+                rel="noopener noreferrer" aria-label="Watch video 3 on YouTube" class="group relative flex aspect-video w-full max-w-md items-center justify-center overflow-hidden bg-slate-300
+                md:aspect-[4/3] md:w-1/4 md:min-w-0 md:max-w-none">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmGRbRcBfTtupEi4j8tFXkcMP-h9OjUD2WgbBOpiwktSRKVE1HwvsjdnI&s=10"
+                    alt="" class="absolute inset-0 h-full w-full object-cover
+                                                    transition-transform duration-300 group-hover:scale-105" />
+                <span class="absolute inset-0 bg-white/0 transition-colors duration-300
+                     md:bg-white/60 md:group-hover:bg-white/0"></span>
+                <span class="relative flex h-11 w-16 items-center justify-center rounded-xl bg-[#FF0000]
+                     transition-transform duration-300 group-hover:scale-110">
+                    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="white" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <!-- footer  -->
+    <footer class="flex items-center justify-center bg-[#2F6FFF] px-6 py-5">
+        <p class="text-center text-sm text-white/90">
+            &copy; 2026 <span class="font-bold text-white">MECHANIC</span>. All rights reserved.
+        </p>
+    </footer>
+
+
+</body>
+
+</html>
